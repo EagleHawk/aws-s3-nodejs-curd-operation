@@ -30,7 +30,9 @@ This sample application connects to Amazon's [Simple Storage Service (S3)](http:
 creates a bucket, and uploads a file to that bucket. The script will automatically
 create the file to upload. All you need to do is run it:
 
-    node s3bucketOP.js
+    node s3bucketOP.js --help
+
+This will let you know what arguments are to be passed.
 
 The S3 documentation has a good overview of the [restrictions for bucket names](http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html)
 for when you start making your own buckets.

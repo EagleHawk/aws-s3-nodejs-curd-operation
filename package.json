@@ -1,7 +1,25 @@
 {
-    "dependencies": {
-        "aws-sdk": ">= 2.0.9",
-        "uuid": "^3.2.1",
-        "yargs": "^11.0.0"
-    }
+  "dependencies": {
+    "aws-sdk": ">= 2.0.9",
+    "uuid": "^3.2.1",
+    "yargs": "^11.0.0"
+  },
+  "name": "aws-s3-nodejs-curd-operation",
+  "description": "A simple Node.js application illustrating usage of the AWS SDK for Node.js.",
+  "version": "1.0.2",
+  "main": "s3bucketOP.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EagleHawk/aws-s3-nodejs-curd-operation.git"
+  },
+  "author": "Devendra Walanj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EagleHawk/aws-s3-nodejs-curd-operation/issues"
+  },
+  "homepage": "https://github.com/EagleHawk/aws-s3-nodejs-curd-operation#readme"
 }
