@@ -1,3 +1,9 @@
+/*
+ * Created by : Devendra Walanj
+ * Purpose : Add more functionality and features to the program.
+**/
+
+
 const uuid = require('uuid');
 var AWS = require('aws-sdk');
 const _REGION = 'us-west-1';
@@ -83,6 +89,7 @@ let deleteOBucket = (awsS3) => {
 
 }
 
+// Export the modules 
 module.exports = {
     createBucket,
     deleteOBucket,

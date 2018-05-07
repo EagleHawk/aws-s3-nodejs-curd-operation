@@ -1,2 +1,2 @@
-aws-nodejs-sample
+aws-s3-nodejs-curd-operation
 Copyright 2018 eagle.hawk, Inc. or its affiliates. All Rights Reserved. 

@@ -1,4 +1,4 @@
-# AWS SDK for Node.js CURD Project
+# AWS SDK for Node.js CRUD Project
 
 A simple Node.js application illustrating usage of the AWS SDK for Node.js.
 
@@ -32,7 +32,12 @@ create the file to upload. All you need to do is run it:
 
     node s3bucketOP.js --help
 
-This will let you know what arguments are to be passed.
+This will let you know what arguments are to be passed and the list of available operations.
+
+To acquire more help on the available actions, you can run for example
+node s3bucketOP.js addbucket --help
+
+
 
 The S3 documentation has a good overview of the [restrictions for bucket names](http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html)
 for when you start making your own buckets.
