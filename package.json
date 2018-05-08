@@ -6,7 +6,7 @@
   },
   "name": "aws-s3-nodejs-curd-operation",
   "description": "A simple Node.js application illustrating usage of the AWS SDK for Node.js.",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "main": "s3bucketOP.js",
   "devDependencies": {},
   "scripts": {
