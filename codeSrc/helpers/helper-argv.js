@@ -13,7 +13,13 @@ const bucketRegionOption = {
     describe: 'Specifies the bucket region, if not specified then default region will be us-west-1',
     demand: false,
     alias: 'br'
-}
+};
+const bucketUploadObject = {
+    describe: 'Specifies the Object to be uploaded.',
+    demand: true,
+    alias: 'up'
+};
+
 const helper_argv = yargs
     .command('addbucket', 'Add a new bucket.', {
         bucketname: {
@@ -26,6 +32,10 @@ const helper_argv = yargs
     .command('listbucket', 'Lists all the buckets created by user.')
     .command('deletebucket', 'Deletes a specified bucket.', {
         bucketname: bucketNameOption
+    })
+    .command('addobject', 'Uploads the specified objects to the specified bucket.', {
+        bucketname: bucketNameOption,
+        uploadobject: bucketUploadObject
     })
     .argv;
 
