@@ -29,22 +29,27 @@ let createBucket =  (awsS3) => {
     console.log(`*********************************************************`);
     
     s3.createBucket(params, function (err, data) {
-        if (err) 
-            console.log(err, err.stack); // an error occurred
+        if (err) {
+            if ((err.statusCode + "").substr(0, 1) === '4') {
+                console.log(err.message); // an error occurred                
+            } else {
+                console.log(err, err.stack); // an error occurred
+            }
+        }
         else 
             console.log(`Access Location : ${data.Location} `);           // successful response
     });
 }
 
-let deleteBucket = () => {
-    return 'deleteBucket' ;
-}
-
 let listBuckets = () => {
     s3.listBuckets((err, data) => {
-        if (err)
-            console.log(err, err.stack); // an error occurred
-        else    {
+        if (err) {
+            if ((err.statusCode + "").substr(0, 1) === '4') {
+                console.log(err.message); // an error occurred                
+            } else {
+                console.log(err, err.stack); // an error occurred
+            }
+        }   else    {
             let element = '';
             odata = data.Buckets
             odata.forEach(oBucket => {
@@ -72,8 +77,13 @@ let deleteOBucket = (awsS3) => {
     console.log(`*********************************************************`);
     
     s3.deleteBucket(params, (err, data) => {
-        if (err)
-            console.log(err, err.stack); // an error occurred
+        if (err)    {
+            if ((err.statusCode+"").substr(0, 1) === '4') {
+                console.log(err.message); // an error occurred                
+            } else {
+                console.log(err, err.stack); // an error occurred
+            }
+        }
         else
             console.log(`Bucket deleted successfully. `);           // successful response
     }) ;
