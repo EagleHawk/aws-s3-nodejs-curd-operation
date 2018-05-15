@@ -19,6 +19,12 @@ const bucketUploadObject = {
     demand: true,
     alias: 'up'
 };
+const displayMetaDataOption = {
+    describe: 'Specify if you want to display the metadata for the objects',
+    demand: false,
+    type: 'boolean',
+    alias: 'dm'
+};
 
 const helper_argv = yargs
     .command('addbucket', 'Add a new bucket.', {
@@ -37,6 +43,10 @@ const helper_argv = yargs
         bucketname: bucketNameOption,
         uploadobject: bucketUploadObject
     })
+    .command('listobjects', 'List all the objects from the given S3 bucket.', {
+        bucketname: bucketNameOption,
+        displaymeta: displayMetaDataOption
+    } )
     .argv;
 
 module.exports = {

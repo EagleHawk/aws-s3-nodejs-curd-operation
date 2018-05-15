@@ -38,6 +38,11 @@ To acquire more help on the available actions, you can run for example
 
     node s3bucketOP.js addbucket --help
 
+You can also check out the sample movie.
+
+    ../sampleMovies/s3-bucket-crud-ops.mov
+
+
 The S3 documentation has a good overview of the [restrictions for bucket names](http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html)
 for when you start making your own buckets.
 

@@ -1,12 +1,13 @@
 {
   "dependencies": {
     "aws-sdk": ">= 2.0.9",
+    "cli-spinner": "^0.2.8",
     "uuid": "^3.2.1",
     "yargs": "^11.0.0"
   },
   "name": "aws-s3-nodejs-curd-operation",
   "description": "A simple Node.js application illustrating usage of the AWS SDK for Node.js.",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "main": "s3bucketOP.js",
   "devDependencies": {},
   "scripts": {

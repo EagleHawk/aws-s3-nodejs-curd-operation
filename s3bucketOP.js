@@ -3,8 +3,7 @@
  * Purpose : Performing a CURD operation on the AWS S3 
 **/
 
-// Load the SDK and UUID
-// const yargs = require('yargs');
+// Load the files
 const awsWorker = require('./codeSrc/worker');
 const _argv = require('./codeSrc/helpers/helper-argv') ;
 
@@ -20,7 +19,7 @@ if (command === 'listbucket') {
 	
 	let bucketName = '', bucketRegion = '' ;
 	if (_argv.helper_argv.hasOwnProperty('bucketname')) 
-		bucketName = _argv.helper_argv.bucketname.trim() ;
+		bucketName = _argv.helper_argv.bucketname ;
 	
 	if (_argv.helper_argv.hasOwnProperty('bucketregion'))
 		bucketRegion = _argv.helper_argv.bucketregion;
@@ -30,7 +29,7 @@ if (command === 'listbucket') {
 } else if (command === 'deletebucket') {
 	let bucketName = '', bucketRegion = '';
 	if (_argv.helper_argv.hasOwnProperty('bucketname'))
-		bucketName = _argv.helper_argv.bucketname.trim();
+		bucketName = _argv.helper_argv.bucketname;
 	
 	if (bucketName === '') {
 		return console.log(`Specify the Bucket`);		
@@ -42,7 +41,7 @@ if (command === 'listbucket') {
 	let bucketName = '', bucketRegion = '', uploadObject = '';
 	
 	if (_argv.helper_argv.hasOwnProperty('bucketname'))	
-		bucketName = _argv.helper_argv.bucketname.trim();		
+		bucketName = _argv.helper_argv.bucketname;		
 	if (bucketName === '') 
 		return console.log(`Specify the Bucket`);
 
@@ -53,6 +52,20 @@ if (command === 'listbucket') {
 
 	awsWorker.uploadObject({ bucketName: bucketName, bucketRegion: bucketRegion, uploadFile: uploadObject });
 	
-} else if (command === 'deleteobject') {
+} 	else if (command === 'deleteobject') {
 
+}	else if (command === 'listobjects') {
+	// Calls for the listing of objects in the provided buckect.
+	let bucketName = '', displayMetaData = false;
+	if (_argv.helper_argv.hasOwnProperty('bucketname'))
+		bucketName = _argv.helper_argv.bucketname;
+
+	if (_argv.helper_argv.hasOwnProperty('displaymeta')) {
+			displayMetaData = _argv.helper_argv.displaymeta;	
+	}
+
+	if (bucketName === '') {
+		return console.log(`Specify the Bucket`);
+	}
+	awsWorker.listBucketObjects({ bucketName: bucketName, displayMetaData: displayMetaData});
 }
